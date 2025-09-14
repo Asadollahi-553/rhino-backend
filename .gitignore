@@ -1,0 +1,12 @@
+#Ignore the .env file containing sensitive API keys
+.env
+
+# Ignore Python-specific files and directories
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.vercel
