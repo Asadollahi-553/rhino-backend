@@ -31,7 +31,8 @@ class PromptRequest(BaseModel):
 
 # 5. بررسی و پیکربندی Gemini API
 # ابتدا تلاش می‌کنیم کلید API را از متغیر محیطی GEMINI_API_KEY دریافت کنیم.
-api_key = os.getenv("GEMINI_API_KEY")
+api_key = os.environ.get("GEMINI_API_KEY")
+#api_key = os.getenv("GEMINI_API_KEY")
 
 if not api_key:
     # اگر کلید API در متغیرهای محیطی پیدا نشد، یک خطا ایجاد می‌کنیم.
