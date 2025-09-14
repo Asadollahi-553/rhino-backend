@@ -54,7 +54,7 @@ async def read_root():
     return {"message": "Hello from FastAPI Backend! Gemini is ready."}
 
 # 7. تعریف یک مسیر جدید برای ارتباط با Gemini API
-@app.post("/generate")
+@app.post("/api/generate")
 async def generate_content_endpoint(request_body: PromptRequest):
     """
     این تابع درخواست‌های POST را برای تولید محتوا با Gemini API مدیریت می‌کند.
