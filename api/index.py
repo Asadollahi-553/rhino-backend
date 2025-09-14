@@ -67,7 +67,7 @@ async def generate_content_endpoint(request_body: PromptRequest):
         # انتخاب مدل Gemini (در اینجا از 'gemini-2.5-flash' استفاده می‌شود)
         # این خط یک مدل جدید برای هر درخواست ایجاد می‌کند.
         model = genai.GenerativeModel('gemini-2.5-flash')
-        
+        # تست
         # ارسال پرامپت به API جمینای
         response = model.generate_content(prompt)
         
