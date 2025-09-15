@@ -14,6 +14,7 @@ import os
 import google.generativeai as genai
 from dotenv import load_dotenv
 from pydantic import BaseModel
+from fastapi.middleware.cors import CORSMiddleware
 
 # 2. بارگذاری متغیرهای محیطی از فایل .env
 # این تابع، محتوای فایل .env را در کنار این فایل، به عنوان متغیرهای محیطی بارگذاری می‌کند.
@@ -22,6 +23,14 @@ load_dotenv()
 
 # 3. ایجاد یک نمونه از برنامه FastAPI
 app = FastAPI()
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 # 4. تعریف یک مدل داده‌ای برای بدنه درخواست POST
 # این مدل مشخص می‌کند که بدنه درخواست POST باید یک فیلد به نام 'prompt' از نوع رشته داشته باشد.
